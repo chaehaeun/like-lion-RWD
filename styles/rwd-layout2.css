@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: rgb(249, 255, 223);
+  border: 1px solid rgb(249, 189, 12);
+  color: #fff;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 12px;
+}
+/* 플렉스 쓰면 마진 병합이 없어짐 */
+
+.group1 .box {
+  background: aquamarine;
+}
+.group2 .box {
+  background: rgb(168, 194, 255);
+}
+.group3 .box {
+  background: rgb(127, 131, 255);
+}
+.group4 .box {
+  background: rgb(210, 255, 120);
+}
+.group5 .box {
+  background: rgb(242, 127, 255);
+}
+.group6 .box {
+  background: rgb(253, 143, 143);
+}
+.group7 .box {
+  background: rgb(0, 131, 88);
+}
+.group8 .box {
+  background: rgb(55, 138, 255);
+}
+.group9 .box {
+  background: rgb(184, 30, 255);
+}
+.group10 .box {
+  background: rgb(255, 184, 78);
+}
+.group11 .box {
+  background: rgb(27, 144, 190);
+}
+.group12 .box {
+  background: rgb(186, 255, 126);
+}
+
+/* 디비전 중에 그룹이 포함돼있는거 */
+div[class*="group"].box {
+  width: 100%;
+  /* height: 50px; */
+}
+
+.box {
+  margin: 12px;
+  height: 150px;
+}
+
+@media (min-width: 768px) {
+  div[class*="group"] {
+    width: 50%;
+  }
+
+  div.group3 {
+    width: 100%;
+    order: -1;
+  }
+}
+@media (min-width: 1280px) {
+  div[class*="group"] {
+    width: 25%;
+  }
+}
